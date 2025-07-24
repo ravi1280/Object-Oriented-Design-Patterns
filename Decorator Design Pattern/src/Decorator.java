@@ -61,5 +61,11 @@ class SugarDecorator extends coffeeDecorator{
 public class Decorator {
     public static void main(String[] args) {
 
+        Coffee coffee = new simpleCoffee();
+        coffee = new MilkDecorator(coffee);
+        coffee = new SugarDecorator(coffee);
+
+        System.out.println("Coffee cost: " + coffee.cost()+" Coffee description: " + coffee.description());
+
     }
 }
